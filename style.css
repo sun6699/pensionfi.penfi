@@ -51,7 +51,7 @@ nav a:hover {
 .hero p {
   max-width: 800px;
   margin: 20px auto;
-  color: #e1cbd0;
+  color: #dfe1cb;
   font-size: 1.2rem; /* Adjusted font size for readability */
 }
 
@@ -134,12 +134,12 @@ nav a:hover {
 
 .socials a:hover {
   background: #00ffd5;
-  color: black;
+  color: rgb(0, 0, 0);
 }
 
 /* CONTRACT */
 .ca-box {
-  background: #1f2937;
+  background: #371f2b;
   padding: 15px;
   border-radius: 10px;
   margin-top: 15px;

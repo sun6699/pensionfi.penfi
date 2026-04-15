@@ -81,16 +81,6 @@ nav a:hover {
   padding: 10px; /* Optional: Adds space around the image */
 }
 
-/* For the image */
-.image-box img {
-  width: 100%; /* Image fills the width of the container */
-  height: auto; /* Keeps the aspect ratio intact */
-  border-radius: 12px; /* Optional: rounds the corners of the image */
-  display: block; /* Ensures the image behaves as a block element, removing any space below it */
-  object-fit: cover; /* Ensures the image covers the space without stretching */
-  /* If you want the image to fit entirely without cropping, use `contain` instead of `cover`: */
-  /* object-fit: contain; */
-}
 
 /* SECTION */
 .section {

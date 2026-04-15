@@ -8,8 +8,8 @@
 
 /* BACKGROUND */
 body {
-  background: linear-gradient(135deg, #020617, #0b0f1a, #020617);
-  color: #fff;
+  background: linear-gradient(135deg, #041702, #0b0f1a, #020617);
+  color: #ffffff;
 }
 
 /* NAVBAR */
@@ -17,20 +17,20 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 15px 30px;
-  background: rgba(17, 24, 39, 0.8);
+  background: rgba(21, 39, 17, 0.8);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
 }
 
 header h1 {
-  color: #00ffd5;
+  color: #ff00f2;
 }
 
 nav a {
   margin: 0 10px;
   text-decoration: none;
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 14px;
 }
 
@@ -51,7 +51,7 @@ nav a:hover {
 .hero p {
   max-width: 800px;
   margin: 20px auto;
-  color: #cbd5e1;
+  color: #e1cbd0;
   font-size: 1.2rem; /* Adjusted font size for readability */
 }
 
@@ -76,7 +76,7 @@ nav a:hover {
 .image-box {
   width: 80%; /* Adjusted for better responsiveness */
   height: auto;
-  background: linear-gradient(45deg, #1f2937, #374151);
+  background: linear-gradient(45deg, #20371f, #374151);
   border-radius: 12px;
   margin: 25px auto; /* Centering the image box */
   overflow: hidden;
@@ -110,7 +110,7 @@ nav a:hover {
 }
 
 .card {
-  background: rgba(31, 41, 55, 0.8);
+  background: rgba(55, 31, 49, 0.8);
   padding: 20px;
   border-radius: 12px;
   backdrop-filter: blur(6px);

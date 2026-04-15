@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PensionFi</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0b0f1a;
+  color: #fff;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: #111827;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  color: #00ffd5;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #00ffd5;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h2 {
+  font-size: 2.7rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.btn {
+  margin: 10px;
+  padding: 12px 25px;
+  border: none;
+  background: #00ffd5;
+  color: black;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.section {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  background: #1f2937;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.image-box {
+  width: 100%;
+  height: 200px;
+  background: #374151;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.socials {
+  margin-top: 20px;
+}
+
+.socials a {
+  margin: 10px;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #1f2937;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.socials a:hover {
+  background: #00ffd5;
+  color: black;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+  margin-top: 40px;
+}
+
+@media(max-width:600px){
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>PENSIONFI</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#problem">Problem</a>
+    <a href="#solution">Solution</a>
+    <a href="#tokenomics">Tokenomics</a>
+    <a href="#roadmap">Roadmap</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Retire Before You’re 40.<br>Or At Least Pretend To.</h2>
+  <p>PensionFi is where degen dreams meet long-term plans.</p>
+  <button class="btn">Buy Now</button>
+
+  <div class="socials">
+    <a href="#">Join Telegram</a>
+    <a href="#">Follow on X</a>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <h2>About PensionFi</h2>
+  <div class="image-box"></div>
+
+  <p>
+    Start your retirement plans 🚀 <br><br>
+    PensionFi is a community-driven digital pension system powered by DeFi,
+    designed to generate passive income through USDT reflections.
+  </p>
+
+  <br>
+
+  <p>
+    ✔ You don’t just hold tokens <br>
+    ✔ You earn real stablecoin rewards (USDT) <br>
+    ✔ You build income while holding <br><br>
+    No middlemen. No waiting decades. No empty promises.
+  </p>
+</section>
+
+<section id="problem" class="section">
+  <h2>The Problem</h2>
+  <p>
+    Retirement is broken. Work 40 years → Retire at 65 → Enjoy life for 10 years?
+    Traditional systems are slow, centralized, and boring.
+    Inflation eats your savings and rules keep changing.
+  </p>
+</section>
+
+<section id="solution" class="section">
+  <h2>The Solution</h2>
+  <p>
+    Welcome to PensionFi — a retirement plan powered by memes, community,
+    and blockchain magic.
+  </p>
+
+  <br>
+
+  <p>
+    ✔ Community-driven growth <br>
+    ✔ On-chain transparency <br>
+    ✔ Long-term incentives <br>
+    ✔ Built for holders
+  </p>
+</section>
+
+<section id="tokenomics" class="section">
+  <h2>Tokenomics</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Total Supply</h3>
+      <p>5M Tokens</p>
+    </div>
+
+    <div class="card">
+      <h3>Burn</h3>
+      <p>20% Initial Burn</p>
+    </div>
+
+    <div class="card">
+      <h3>Taxes</h3>
+      <p>4% Buy / 3% Sell</p>
+    </div>
+
+    <div class="card">
+      <h3>Liquidity</h3>
+      <p>Locked / Community Controlled</p>
+    </div>
+
+    <div class="card">
+      <h3>Rewards</h3>
+      <p>USDT Reflections</p>
+    </div>
+
+    <div class="card">
+      <h3>Contract</h3>
+      <p>Renounced / Secure</p>
+      <p>Chain BSC, CA 0x8C03246F77B96051Ab01d30e79C4Ba769210d8F0</p>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap" class="section">
+  <h2>Roadmap</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Phase 1</h3>
+      <p>Takeover, burn, liquidity secured, branding refresh</p>
+    </div>
+
+    <div class="card">
+      <h3>Phase 2</h3>
+      <p>Community growth, listings, influencer awareness</p>
+    </div>
+
+    <div class="card">
+      <h3>Phase 3</h3>
+      <p>Partnerships, marketing push, expansion</p>
+    </div>
+
+    <div class="card">
+      <h3>Phase 4</h3>
+      <p>Utility, staking, governance ideas</p>
+    </div>
+
+    <div class="card">
+      <h3>Phase 5</h3>
+      <p>Major listings, global expansion</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Your Future Self Is Watching 👀</h2>
+  <p>
+    You can keep scrolling… or start your retirement today.
+  </p>
+  <button class="btn">https://t.me/penficoin</button>
+  <button class="btn">https://x.com/PenFi_CTO</button>
+</section>
+
+<footer>
+  <p>PensionFi — Not financial advice. Just retirement propaganda.</p>
+</footer>
+
+</body>
+</html>

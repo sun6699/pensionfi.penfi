@@ -1,3 +1,4 @@
+/* GENERAL RESET */
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +17,7 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 15px 30px;
-  background: rgba(17,24,39,0.8);
+  background: rgba(17, 24, 39, 0.8);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
@@ -40,7 +41,7 @@ nav a:hover {
 /* HERO */
 .hero {
   text-align: center;
-  padding: 100px 20px;
+  padding: 10vh 20px; /* Adjusted to fit more naturally */
 }
 
 .hero h2 {
@@ -48,9 +49,10 @@ nav a:hover {
 }
 
 .hero p {
-  max-width: 700px;
+  max-width: 800px;
   margin: 20px auto;
   color: #cbd5e1;
+  font-size: 1.2rem; /* Adjusted font size for readability */
 }
 
 /* BUTTON */
@@ -72,15 +74,22 @@ nav a:hover {
 
 /* IMAGE SPACE */
 .image-box {
-  width: 100%;
-  height: auto; /* Allow the height to adjust based on the image */
+  width: 80%; /* Adjusted for better responsiveness */
+  height: auto;
   background: linear-gradient(45deg, #1f2937, #374151);
   border-radius: 12px;
-  margin: 25px 0;
-  overflow: hidden; /* Ensures the image doesn't overflow beyond the box */
-  padding: 10px; /* Optional: Adds space around the image */
+  margin: 25px auto; /* Centering the image box */
+  overflow: hidden;
+  padding: 10px;
 }
 
+.image-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  object-fit: cover;
+}
 
 /* SECTION */
 .section {
@@ -101,7 +110,7 @@ nav a:hover {
 }
 
 .card {
-  background: rgba(31,41,55,0.8);
+  background: rgba(31, 41, 55, 0.8);
   padding: 20px;
   border-radius: 12px;
   backdrop-filter: blur(6px);
@@ -154,8 +163,20 @@ footer {
 }
 
 /* MOBILE */
-@media(max-width:600px){
+@media (max-width: 600px) {
   .hero h2 {
     font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem; /* Adjusting text size for mobile */
+  }
+
+  .image-box {
+    width: 90%; /* Adjust image box width for small screens */
+  }
+
+  .btn {
+    width: 100%; /* Make the button full width on small screens */
   }
 }

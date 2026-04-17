@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PensionFi! Your Token For Retirement</title>
 
+  <!-- Link to External CSS -->
   <link rel="stylesheet" href="style.css">
 
+  <!-- Font Awesome CDN -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -21,7 +23,6 @@
     <a href="#solution">Solution</a>
     <a href="#tokenomics">Tokenomics</a>
     <a href="#roadmap">Roadmap</a>
-    <a href="#contact">Contact</a>
   </nav>
 </header>
 
@@ -41,16 +42,14 @@
   <button class="btn">Buy Now</button>
 
   <div class="socials">
-    <a href="mailto:your@email.com">
-      <i class="fas fa-envelope" style="font-size: 30px; color: white; margin: 0 10px;"></i>
-    </a>
-
     <a href="https://t.me/penficoin" target="_blank">
       <i class="fab fa-telegram-plane" style="font-size: 30px; color: white; margin: 0 10px;"></i>
     </a>
-
     <a href="https://x.com/PenFi_CTO" target="_blank">
       <i class="fab fa-twitter" style="font-size: 30px; color: white; margin: 0 10px;"></i>
+    </a>
+    <a href="mailto:your@email.com" target="_blank">
+      <i class="fas fa-envelope" style="font-size: 30px; color: white; margin: 0 10px;"></i>
     </a>
   </div>
 </section>
@@ -70,6 +69,7 @@
 <section id="about" class="section">
   <h2>About PensionFi</h2>
 
+  <!-- GRAPHIC SPACE 2 -->
   <div class="image-box">
     <img src="images/Screenshot_6.png" alt="PensionFi graphic">
   </div>
@@ -77,22 +77,87 @@
   <p>
     REST IS SWEET AFTER LABOUR FOR MANY YEARS 😋<br><br>
     PensionFi is where degen dreams meet long-term plans.
+    Your future deserves more than vibes and losses.
+  </p>
+
+  <p>
+    $PENFI generates passive income through USDT reflections.<br><br>
+    Earn while holding<br>
+    Real stablecoin rewards<br>
+    No middlemen<br><br>
+    No waiting decades. No empty promises.
   </p>
 </section>
 
-<!-- CONTACT SECTION -->
-<section id="contact" class="section">
-  <h2>Contact Us</h2>
+<!-- PROBLEM -->
+<section id="problem" class="section">
+  <h2>The Problem</h2>
 
-  <p>Have questions or want to partner? Reach out 👇</p>
+  <p>
+    Retirement is broken.<br><br>
+    Work 40 years → Retire at 65 → Enjoy 10 years?<br>
+    Nope…<br><br>
+    Inflation eats savings. Systems are outdated.
+    Many retirees face financial difficulties due to insufficient savings, pension plans that don’t keep up with inflation, and unexpected costs (medical bills, emergencies, etc.).
+    Some retirees may not have access to traditional banking or financial systems, especially in underserved or developing areas.
+    As retirees age, medical costs often increase. Without a reliable healthcare plan, retirees can face significant challenges in covering these expenses.
+    With longer life expectancies, many retirees fear outliving their savings, especially if they did not accumulate enough during their working years.
+  </p>
+</section>
 
-  <form onsubmit="sendEmail(event)">
-    <input type="text" id="name" placeholder="Your Name" required><br><br>
-    <input type="email" id="email" placeholder="Your Email" required><br><br>
-    <textarea id="message" placeholder="Your Message" required></textarea><br><br>
+<!-- SOLUTION -->
+<section id="solution" class="section">
+  <h2>The Solution</h2>
 
-    <button class="btn" type="submit">Send Message</button>
-  </form>
+  <p>
+    A retirement plan powered by memes, community, and blockchain.
+  </p>
+
+  <p>
+    Community-driven<br>
+    Transparent<br>
+    Long-term focused<br>
+    Retirees rely only on pension but penfi holders are saving money by
+    Hold $PENFI to earn USDT automatically
+    No need to sell tokens
+    Works like “monthly pension” but on-chain
+    This solves cash flow problem after retirement
+    Instant Earnings
+    unlike Traditional pensions that take decades
+    Start earning immediately after buying
+    No lock period
+    Decentralized Control
+    Users control their funds (wallet-based)
+    No middleman
+    Transparent blockchain system
+  </p>
+</section>
+
+<!-- TOKENOMICS -->
+<section id="tokenomics" class="section">
+  <h2>Tokenomics</h2>
+
+  <div class="grid">
+    <div class="card"><h3>Supply</h3><p>5M</p></div>
+    <div class="card"><h3>Burn</h3><p>20%</p></div>
+    <div class="card"><h3>Taxes</h3><p>4% / 3%</p></div>
+    <div class="card"><h3>Liquidity</h3><p>Locked</p></div>
+    <div class="card"><h3>Wallet</h3><p>2%</p></div>
+    <div class="card"><h3>Contract</h3><p>Renounced</p></div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap" class="section">
+  <h2>Roadmap</h2>
+
+  <div class="grid">
+    <div class="card"><h3>Phase 1</h3><p>Takeover & burn</p></div>
+    <div class="card"><h3>Phase 2</h3><p>Growth & listings</p></div>
+    <div class="card"><h3>Phase 3</h3><p>Partnerships</p></div>
+    <div class="card"><h3>Phase 4</h3><p>Utility & staking</p></div>
+    <div class="card"><h3>Phase 5</h3><p>Expansion</p></div>
+  </div>
 </section>
 
 <!-- CTA -->
@@ -102,8 +167,21 @@
   <button class="btn">Start Your Retirement Plans Now with Penfi</button>
 </section>
 
+<!-- CONTACT EMAIL -->
+<section class="section">
+  <h2>Contact Us</h2>
+  <p>For enquiries and partnerships, send us a message below.</p>
+
+  <form onsubmit="sendEmail(event)">
+    <input type="text" id="name" placeholder="Your Name" required><br><br>
+    <input type="email" id="email" placeholder="Your Email" required><br><br>
+    <textarea id="message" placeholder="Your Message" rows="6" required></textarea><br><br>
+    <button class="btn" type="submit">Send Email</button>
+  </form>
+</section>
+
 <footer>
-  <p>Contact: <a href="mailto:your@email.com">your@email.com</a></p>
+  <p>This is a token that will change your life in the long run.</p>
   <p>Powered by PensionFi Team</p>
   <p>2026</p>
 </footer>
@@ -115,16 +193,24 @@ function copyCA() {
   alert("Copied!");
 }
 
-function sendEmail(e) {
-  e.preventDefault();
+function sendEmail(event) {
+  event.preventDefault();
 
-  let name = document.getElementById("name").value;
-  let email = document.getElementById("email").value;
-  let message = document.getElementById("message").value;
+  <form onsubmit="sendEmail(event)">
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="email" id="email" placeholder="Your Email" required>
+  <textarea id="message" placeholder="Your Message" rows="8" required></textarea>
+  <button class="btn" type="submit">Send Email</button>
+</form>
 
-  let mailtoLink = `mailto:your@email.com?subject=Message from ${name}&body=Email: ${email}%0D%0A%0D%0A${message}`;
+  const subject = encodeURIComponent("PensionFi Contact Form Message from " + name);
+  const body = encodeURIComponent(
+    "Name: " + name + "\n" +
+    "Email: " + email + "\n\n" +
+    "Message:\n" + message
+  );
 
-  window.location.href = mailtoLink;
+  window.location.href = "mailto:your@email.com?subject=" + subject + "&body=" + body;
 }
 </script>
 

@@ -180,3 +180,17 @@ footer {
     width: 100%; /* Make the button full width on small screens */
   }
 }
+
+input, textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  min-height: 150px;
+}

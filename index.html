@@ -172,13 +172,48 @@
   <h2>Contact Us</h2>
   <p>For enquiries and partnerships, send us a message below.</p>
 
-  <form onsubmit="sendEmail(event)">
+  <form id="contact-form">
     <input type="text" id="name" placeholder="Your Name" required><br><br>
     <input type="email" id="email" placeholder="Your Email" required><br><br>
     <textarea id="message" placeholder="Your Message" rows="6" required></textarea><br><br>
     <button class="btn" type="submit">Send Email</button>
   </form>
 </section>
+
+<script>
+// Function to handle form submission
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  // Gather form data
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  // Validate the email format
+  if (!validateEmail(email)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  // Prepare the data for the email
+  const subject = encodeURIComponent("Message from " + name);
+  const body = encodeURIComponent(
+    "Name: " + name + "\n" +
+    "Email: " + email + "\n\n" +
+    "Message:\n" + message
+  );
+
+  // Send the email using mailto link (this will open the user's email client)
+  window.location.href = "mailto:penfi@pensionficto.com?subject=" + subject + "&body=" + body;
+});
+
+// Simple email validation function
+function validateEmail(email) {
+  const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  return re.test(String(email).toLowerCase());
+}
+</script>
 
 <footer>
   <p>This is a token that will change your life in the long run.</p>
@@ -196,64 +231,53 @@ function copyCA() {
 function sendEmail(event) {
   event.preventDefault();
 
-  <?php
-// Include PHPMailer
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+<script>
+// JavaScript to handle form submission and validation
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form from submitting
 
-// Autoload PHPMailer
-require 'vendor/autoload.php';  // Or include manually if not using Composer
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
 
-// Fetch and sanitize form inputs
-$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);  // Sanitize email input
-$message = htmlspecialchars($_POST['message']);  // Sanitize message input
+  // Simple Email Validation
+  if (!validateEmail(email)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
 
-// Validate email format
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo "Invalid email format.";
-    exit;
+  // Send form data to PHP backend
+  const formData = new FormData();
+  formData.append('name', name);
+  formData.append('email', email);
+  formData.append('message', message);
+
+  // Send AJAX request to PHP for processing
+  fetch('sendEmail.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.text())
+  .then(data => alert(data))  // Show success/error message
+  .catch(error => console.error('Error:', error));
+});
+
+// Email validation function
+function validateEmail(email) {
+  const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  return re.test(String(email).toLowerCase());
 }
+</script>
 
-// Email settings
-$to = "penfi@pensionficto.com";  // Replace with your email address
-$subject = "Message from Website Contact Form";
 
-// SMTP settings for Zoho
-$smtpHost = "smtp.zoho.com";
-$smtpPort = 465;
-$smtpUser = "penfi@pensionficto.com";  // Replace with your Zoho email
-$smtpPassword = getenv('ZOHO_PASSWORD');  // Use an environment variable for better security
+<form id="contact-form" action="sendEmail.php" method="POST">
+  <input type="text" id="name" name="name" placeholder="Your Name" required><br><br>
+  <input type="email" id="email" name="email" placeholder="Your Email" required><br><br>
+  <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea><br><br>
+  <button class="btn" type="submit">Send Email</button>
+</form>
 
-// Create PHPMailer instance
-$mail = new PHPMailer(true);
-
-try {
-    // Server settings
-    $mail->isSMTP();
-    $mail->Host = $smtpHost;
-    $mail->Port = $smtpPort;
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->SMTPAuth = true;
-    $mail->Username = $smtpUser;
-    $mail->Password = $smtpPassword;
-
-    // Sender and recipient
-    $mail->setFrom($smtpUser, "PenFi Website");
-    $mail->addAddress($to);
-
-    // Subject and body content
-    $mail->Subject = $subject;
-    $mail->Body    = $message;
-    $mail->AltBody = strip_tags($message);  // Plain text alternative for non-HTML email clients
-
-    // Send email
-    $mail->send();
-    echo "Message sent!";
-} catch (Exception $e) {
-    echo "Mailer Error: " . $mail->ErrorInfo;
-}
-?>
-
+ 
   const subject = encodeURIComponent("PensionFi Contact Form Message from " + name);
   const body = encodeURIComponent(
     "Name: " + name + "\n" +
@@ -264,6 +288,5 @@ try {
   window.location.href = "mailto:penfi@pensionficto.com?subject=" + subject + "&body=" + body;
 }
 </script>
-
 </body>
 </html>

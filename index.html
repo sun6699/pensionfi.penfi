@@ -196,12 +196,63 @@ function copyCA() {
 function sendEmail(event) {
   event.preventDefault();
 
-  <form onsubmit="sendEmail(event)">
-  <input type="text" id="name" placeholder="Your Name" required>
-  <input type="email" id="email" placeholder="Your Email" required>
-  <textarea id="message" placeholder="Your Message" rows="8" required></textarea>
-  <button class="btn" type="submit">Send Email</button>
-</form>
+  <?php
+// Include PHPMailer
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Autoload PHPMailer
+require 'vendor/autoload.php';  // Or include manually if not using Composer
+
+// Fetch and sanitize form inputs
+$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);  // Sanitize email input
+$message = htmlspecialchars($_POST['message']);  // Sanitize message input
+
+// Validate email format
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "Invalid email format.";
+    exit;
+}
+
+// Email settings
+$to = "penfi@pensionficto.com";  // Replace with your email address
+$subject = "Message from Website Contact Form";
+
+// SMTP settings for Zoho
+$smtpHost = "smtp.zoho.com";
+$smtpPort = 465;
+$smtpUser = "penfi@pensionficto.com";  // Replace with your Zoho email
+$smtpPassword = getenv('ZOHO_PASSWORD');  // Use an environment variable for better security
+
+// Create PHPMailer instance
+$mail = new PHPMailer(true);
+
+try {
+    // Server settings
+    $mail->isSMTP();
+    $mail->Host = $smtpHost;
+    $mail->Port = $smtpPort;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->SMTPAuth = true;
+    $mail->Username = $smtpUser;
+    $mail->Password = $smtpPassword;
+
+    // Sender and recipient
+    $mail->setFrom($smtpUser, "PenFi Website");
+    $mail->addAddress($to);
+
+    // Subject and body content
+    $mail->Subject = $subject;
+    $mail->Body    = $message;
+    $mail->AltBody = strip_tags($message);  // Plain text alternative for non-HTML email clients
+
+    // Send email
+    $mail->send();
+    echo "Message sent!";
+} catch (Exception $e) {
+    echo "Mailer Error: " . $mail->ErrorInfo;
+}
+?>
 
   const subject = encodeURIComponent("PensionFi Contact Form Message from " + name);
   const body = encodeURIComponent(
@@ -210,7 +261,7 @@ function sendEmail(event) {
     "Message:\n" + message
   );
 
-  window.location.href = "mailto:your@email.com?subject=" + subject + "&body=" + body;
+  window.location.href = "mailto:penfi@pensionficto.com?subject=" + subject + "&body=" + body;
 }
 </script>
 
